@@ -1,0 +1,5 @@
+bucket       = "your-bucket" 
+key          = "your-state.tfstate"
+region       = "eu-central-1"
+profile      = "Your_Profile"
+use_lockfile = true

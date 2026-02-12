@@ -32,20 +32,32 @@ Proof-of-concept project for processing S3 events using an AWS Lambda written in
 
 ## Running locally with Terraform
 
-1. Initialize Terraform:
+1. Copy or create a `state.config` file in `infra/tf/` with your backend configuration (e.g., S3 bucket for state storage).
+
+```bash
+cp infra/tf/state.config.example infra/tf/state.config
+```
+
+2. Copy or create `terraform.tfvars` in `infra/tf/` with your variable values.
+
+```bash
+cp infra/tf/terraform.tfvars.example infra/tf/terraform.tfvars
+```
+
+3. Initialize Terraform:
 
 ```bash
 cd infra/tf
-terraform init
+terraform init -backend-config state.config
 ```
 
-2. Create an execution plan:
+4. Create an execution plan:
 
 ```bash
 terraform plan -out s3-events.tfplan
 ```
 
-3. Apply the plan:
+5. Apply the plan:
 
 ```bash
 terraform apply "s3-events.tfplan"

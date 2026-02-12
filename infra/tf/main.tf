@@ -11,9 +11,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "your-unique-tf-state-bucket-name" # Change to your unique S3 bucket for Terraform state
-    key          = "s3-events.tfstate"
-    region       = "us-east-1" # Change to the region of your S3 bucket
+    bucket       = ""
+    key          = ""
+    region       = ""
+    profile      = ""
     use_lockfile = true
   }
 }

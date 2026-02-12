@@ -1,0 +1,11 @@
+bucket_name = "your-unique-bucket-name"
+project_name     = "s3-events"
+region           = "us-east-1"
+sns_topic_name   = "s3-events-topic"
+lambda_name      = "s3-events-handler"
+lambda_source_dir = "../../cmd/lambda"
+lambda_reserved_concurrency = null
+tags = {
+	owner   = "your-name"
+	project = "s3-events"
+}
